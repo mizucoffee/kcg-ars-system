@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import root from '@/views/Root'
+import clock from '@/views/Clock'
 import search from '@/views/Search'
 
 Vue.use(VueRouter)
@@ -10,7 +10,7 @@ export default new VueRouter({
   routes: [
     {
       path: '/',
-      component: root
+      component: clock
     },
     {
       path: '/search',
