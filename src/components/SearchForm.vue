@@ -2,21 +2,29 @@
   <div>
     <h3>Week</h3>
     <div class="box">
-      <radio-button name="week" id="monday" text="Mon" v-model="week" @input="validate" />
-      <radio-button name="week" id="tuesday" text="Tue" v-model="week" @input="validate" />
-      <radio-button name="week" id="wednesday" text="Wed" v-model="week" @input="validate" />
-      <radio-button name="week" id="thursday" text="Thu" v-model="week" @input="validate" />
-      <radio-button name="week" id="friday" text="Fri" v-model="week" @input="validate" />
+      <radio-button
+        v-for="(w, i) in weekList"
+        name="week"
+        :id="w"
+        :key="w"
+        :text="w | short"
+        :number="i"
+        v-model="week"
+        @input="validate"
+      />
     </div>
     <h3>Period</h3>
     <div class="box">
-      <radio-button name="period" id="first" text="1" v-model="period" @input="validate" />
-      <radio-button name="period" id="second" text="2" v-model="period" @input="validate" />
-      <radio-button name="period" id="third" text="3" v-model="period" @input="validate" />
-      <radio-button name="period" id="forth" text="4" v-model="period" @input="validate" />
-      <radio-button name="period" id="fifth" text="5" v-model="period" @input="validate" />
-      <radio-button name="period" id="sixth" text="6" v-model="period" @input="validate" />
-      <radio-button name="period" id="seventh" text="7" v-model="period" @input="validate" />
+      <radio-button
+        v-for="(p, i) of 7"
+        name="period"
+        :id="p"
+        :key="p"
+        :text="i+1"
+        :number="i"
+        v-model="period"
+        @input="validate"
+      />
     </div>
   </div>
 </template>
@@ -32,13 +40,19 @@ export default {
   data() {
     return {
       week: null,
-      period: null
+      period: null,
+      weekList: ["monday", "tuesday", "wednesday", "thursday", "friday"]
     };
   },
   methods: {
     validate: function() {
       if (this.week != null && this.period != null)
         this.$emit("search", this.week, this.period);
+    }
+  },
+  filters: {
+    short: function(text) {
+      return text.charAt(0).toUpperCase() + text.slice(1, 3);
     }
   }
 };

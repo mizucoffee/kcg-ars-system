@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="radio" :name="name" :id="id" hidden @input="check"/>
+    <input type="radio" :name="name" :id="id" :value="number" hidden @input="check"/>
     <label :for="id">{{text}}</label>
   </div>
 </template>
@@ -8,14 +8,15 @@
 <script>
 export default {
   name: "RadioButton",
-  props: {
-    name: String,
-    id: String,
-    text: String
-  },
+  props: [
+    'name',
+    'id',
+    'text',
+    'number'
+  ],
   methods: {
       check: function(e) {
-          this.$emit('input', e.target.id)
+          this.$emit('input', e.target.value)
       }
   }
 };
