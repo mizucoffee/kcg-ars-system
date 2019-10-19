@@ -1,21 +1,29 @@
 <template>
   <div class="main">
-      <datas v-bind:data="data"/>
+    <sub-header content="Search" />
+    <search-form @search="search"/>
   </div>
 </template>
 
 <script>
-import Data from "@/components/Data.vue"
+import SubHeader from "@/components/SubHeader.vue";
+import SearchForm from "@/components/SearchForm.vue";
 
 export default {
   name: "Root",
   props: {
-      data: Array
+    data: Array
   },
   components: {
-    Datas: Data
+    SubHeader,
+    SearchForm
   },
-}
+  methods: {
+      search: function(a,b) {
+          console.log(a,b)
+      }
+  }
+};
 </script>
 
 <style scoped>

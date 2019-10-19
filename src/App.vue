@@ -8,8 +8,6 @@
 </template>
 
 <script>
-//
-// import Data from "./components/Data.vue";
 import GlobalHeader from "./components/Header.vue";
 import GlobalFooter from "./components/Footer.vue";
 import Navi from "./components/Navi.vue";

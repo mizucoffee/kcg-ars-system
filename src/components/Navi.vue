@@ -13,7 +13,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 nav {
     font-family: "Raleway", sans-serif;
     display: flex;
@@ -29,9 +29,8 @@ a {
     width: 128px;
     font-size: 18pt;
     text-decoration: none;
-}
-
-a:hover {
-    opacity: 0.7;
+    &:hover {
+        opacity: 0.7;
+    }
 }
 </style>
