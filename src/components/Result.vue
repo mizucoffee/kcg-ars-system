@@ -24,7 +24,8 @@ export default {
 .result {
   color: rgb(100, 100, 100);
   margin: 0 auto;
-  width: 480px;
+  max-width: 480px;
+  width: 100vw;
 }
 .list {
   margin: 16px 0;
@@ -32,7 +33,8 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 480px;
+  max-width: 480px;
+  width: 100vw;
   & > div {
     margin: 4px 8px;
   }
