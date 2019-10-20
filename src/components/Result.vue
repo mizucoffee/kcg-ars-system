@@ -1,7 +1,7 @@
 <template>
   <div class="result">
-    <div class="list" v-for="f of 3" :key="f">
-      <div v-for="room in floor(f+2)" :key="room.name">{{room.name}}</div>
+    <div class="list" v-for="f of 3" :key="f" v-show="floor(f+2).length != 0" >
+      <div v-for="room in floor(f+2)" :key="room.name" >{{room.name}}</div>
     </div>
   </div>
 </template>
@@ -28,8 +28,8 @@ export default {
   width: 100vw;
 }
 .list {
-  margin: 16px 0;
-  font-size: 24pt;
+  margin: 8px 0;
+  font-size: 20pt;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

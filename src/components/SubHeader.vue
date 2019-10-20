@@ -13,9 +13,9 @@ export default {
 
 <style scoped>
 h2 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 700;
-  font-size: 20pt;
+  font-size: 36pt;
   padding-bottom: 32px;
   color: rgb(0, 8, 53);
 }

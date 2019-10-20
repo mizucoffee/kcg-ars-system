@@ -42,6 +42,7 @@ span {
   line-height: 1em;
   font-size: 48pt;
   font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
 }
 .mini {
   font-size: 32pt;

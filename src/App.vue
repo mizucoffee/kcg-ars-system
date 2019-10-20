@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <global-header/>
-    <navi/>
-    <router-view v-bind:data="list"/>
-    <global-footer/>
+    <global-header />
+    <navi />
+    <router-view v-bind:data="list" />
+    <global-footer />
   </div>
 </template>
 
@@ -19,20 +19,21 @@ export default {
     Navi,
     GlobalFooter
   },
-  data () {
+  data() {
     return {
       list: []
-    }
+    };
   },
   created() {
     fetch(
-      "https://gist.githubusercontent.com/mizucoffee/1a9012c612aeb49c174d5057ce03362a/raw/class.json"
+      "https://gist.githubusercontent.com/mizucoffee/1a9012c612aeb49c174d5057ce03362a/raw/class.json",
+      { mode: "cors" }
     )
       .then(res => res.json())
       .then(data => data.filter(e => e.isAvailable))
       .then(data => data.filter(e => e.name != "E601"))
       .then(data => {
-       this.list = data.map(e => ({
+        this.list = data.map(e => ({
           ...e,
           free: [...Array(5)].map((_, i) =>
             (
@@ -43,11 +44,11 @@ export default {
               .split("")
               .map(c => c == "0")
           )
-        }))
+        }));
       })
       .catch(err => {
-        console.error(err)
-      })
+        console.error(err);
+      });
   }
 };
 </script>

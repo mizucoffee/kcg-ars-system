@@ -35,4 +35,7 @@ export default {
 </script>
 
 <style scoped>
+.result {
+  margin-top: 32px;
+}
 </style>
