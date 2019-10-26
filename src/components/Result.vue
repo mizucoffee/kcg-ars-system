@@ -1,7 +1,7 @@
 <template>
   <div class="result">
-    <div class="list" v-for="f of 3" :key="f" v-show="floor(f+2).length != 0" >
-      <div v-for="room in floor(f+2)" :key="room.name" >{{room.name}}</div>
+    <div class="list" v-for="f of 4" :key="f" v-show="floor(f+1).length != 0" >
+      <div v-for="room in floor(f+1)" :key="room.name" >{{room.name}}</div>
     </div>
   </div>
 </template>
